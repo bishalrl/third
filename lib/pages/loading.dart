@@ -14,7 +14,7 @@ class _LoadingState extends State<Loading> {
   void setupWorldTime() async {
     WorldTime instance = WorldTime(
         flag: 'Nepal.jpg', location: 'Kathmandu', url: 'Asia/Kathmandu');
-    await instance.getdata;
+    instance.getdata;
     print(instance.time);
   }
 
@@ -22,10 +22,10 @@ class _LoadingState extends State<Loading> {
   void initState() {
     super.initState();
     setupWorldTime();
-    setState(() {
-      var instance;
-      time = instance.time;
-    });
+    // setState(() {
+    //   var instance;
+    //   time = instance.time;
+    // });
   }
 
   @override
@@ -34,7 +34,7 @@ class _LoadingState extends State<Loading> {
       appBar: AppBar(),
       body: Padding(
         padding: EdgeInsets.all(15),
-        child: Text("loadingg"),
+        child: Center(child: Text("loadingg")),
       ),
     );
   }
